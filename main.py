@@ -73,7 +73,7 @@ def parse_search_page(page):
     soup = BeautifulSoup(html, features="html5lib")
     vacancies = soup.find_all(attrs={"class": "serp-item__title"})
     vacancy_list = [parse_vacancy_by_ref(i["href"], page) for i in vacancies]
-    print(f"All articles in page {page} ")
+    print(f"All articles in page {page} are processed")
     return [i for i in vacancy_list if i is not None]
 
 
