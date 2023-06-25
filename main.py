@@ -85,10 +85,8 @@ def get_search_params():
     )
     max_page_number = max([int(i.find("span").text) for i in page_buttons])
     print(f"Search contains {max_page_number} pages")
-    vacancies_on_one_page = len(soup.find_all(attrs={"class": "serp-item__title"}))
     global MAX_PAGES
     MAX_PAGES = max_page_number
-    print(f"Total number of search pages is {MAX_PAGES}")
     return max_page_number
 
 
